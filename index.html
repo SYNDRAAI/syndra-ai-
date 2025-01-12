@@ -14,7 +14,7 @@
             font-family: 'Raleway', sans-serif;
             background: #1d1d1d;
             color: white;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         header {
@@ -251,6 +251,28 @@
         form button:hover {
             background-color: #3c063c;
         }
+        section#Contract {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    background-image: url(https://imgur.com/a/jyvlI3T); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    color: white;
+}
+
+section#feedback {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    background-image: url(https://imgur.com/a/jyvlI3T); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    color: white;
+}
+
     </style>
 </head>
 <body>
@@ -262,7 +284,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#Contract">Contract</a></li>
                 <li><a href="#feedback">Feedback</a></li>
-                <li><a href="https://github.com/SYNDRAAI/syndra-ai-" target="_blank">Github</a></li>
+                <li><a href="https://github.com/" target="_blank">Github</a></li>
 
             </ul>
         </nav>
@@ -281,11 +303,13 @@
         </div>
     </div>
 
+
     <section id="Contract">
         <h2>Contract</h2>
         <p>Not launched yet. We continue to improve our AI agent.</p>
     </section>
-
+    
+    
     <section id="feedback">
         <h2>Feedback</h2>
         <form>
@@ -379,4 +403,170 @@ animate();
     </script>
    
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNDRA AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+       
+        #syndrabot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: #3f0a4a;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        #syndrabot-btn:hover {
+            background-color: #3a0540;
+        }
+
+        /* Chatbox Styles */
+        .chatbox {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            height: 400px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .chatbox-header {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .chatbox-messages {
+            height: 300px;
+            overflow-y: auto;
+            background-color: #2c3e50;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .chatbox-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbox-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4b0857;
+            color: rgb(183, 179, 179);
+        }
+
+        .chatbox-input button {
+            padding: 10px;
+            border: none;
+            background-color: #4e5251;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chatbox-input button:hover {
+            background-color: #78697a;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            color: #778686;
+        }
+
+        .bot-message {
+            color: #f3f1f2;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <button id="syndrabot-btn" onclick="toggleChat()">SyndraBot</button>
+
+   
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">SyndraBot</div>
+        <div class="chatbox-messages" id="chatbox-messages"></div>
+        <div class="chatbox-input">
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+       
+        const motivationalQuotes = [
+            "Strength is choosing to rise after every fall.",
+            "Challenges are opportunities to discover your true strength.",
+            "The greatest victory is in rising every time we fall.",
+            "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+            "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
+        ];
+
+        
+        function toggleChat() {
+            const chatbox = document.getElementById('chatbox');
+            chatbox.style.display = (chatbox.style.display === 'none' || chatbox.style.display === '') ? 'flex' : 'none';
+        }
+
+        
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value.trim();
+            const chatboxMessages = document.getElementById('chatbox-messages');
+
+            if (userInput) {
+                
+                const userMessageElement = document.createElement('div');
+                userMessageElement.classList.add('chat-message', 'user-message');
+                userMessageElement.textContent = `You: ${userInput}`;
+                chatboxMessages.appendChild(userMessageElement);
+
+                
+                const botResponse = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+                const botMessageElement = document.createElement('div');
+                botMessageElement.classList.add('chat-message', 'bot-message');
+                botMessageElement.textContent = `Bot: ${botResponse}`;
+                chatboxMessages.appendChild(botMessageElement);
+
+                
+                chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+
+                
+                document.getElementById('user-input').value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
 </html>
