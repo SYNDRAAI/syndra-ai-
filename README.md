@@ -2,7 +2,7 @@
 
 SYNDRA AI is an innovative platform providing advanced solutions in artificial intelligence. Our mission is to guide users into the AI world by offering cutting-edge technologies and seamless integrations.
 
-![SYNDRA AI Banner](https://imgur.com/a/jyvlI3T)
+(https://imgur.com/a/jyvlI3T)
 
 ## Features
 
