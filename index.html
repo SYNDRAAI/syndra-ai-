@@ -3,633 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SYNDRA AI - Your gateway to intelligent solutions. Explore the future of AI with cutting-edge technology and seamless integrations.">
-    <meta name="keywords" content="AI, SYNDRA AI, Artificial Intelligence, Technology, Innovation">
-    <title>SYNDRA AI</title>
+    <title>SYNDRA AI - Mysterious AI Sorcerer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@300;500&display=swap');
-
         body {
             margin: 0;
-            font-family: 'Raleway', sans-serif;
-            background: #1d1d1d;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        header {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fff;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #44024d, #4c035a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 3s ease infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #44034d, 0 0 15px #42034e; }
-            50% { text-shadow: 0 0 20px #410241, 0 0 40px #330242; }
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li {
-            font-size: 1.2rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 2px solid transparent;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            border-color: white;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 70px;
-                right: 50px;
-                border-radius: 10px;
-                padding: 10px;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100vh;
-            position: relative;
-            color: white;
-            z-index: 10;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            animation: fadeInDown 2s ease;
-        }
-
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            animation: fadeIn 3s ease;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeInUp 2.5s ease;
-            position: relative;
-            z-index: 10;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-buttons a {
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-            border: 2px solid white;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 20;
-        }
-
-        .cta-buttons a:hover {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-            transform: scale(1.1);
-        }
-
-        section {
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            color: #e6e6e6;
             line-height: 1.6;
         }
-
-        footer {
+        header {
+            background: #1a1a1a;
             padding: 20px;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            font-size: 0.9rem;
+            border-bottom: 2px solid #333;
         }
-
-        footer a {
-            color: #ff6347;
-            text-decoration: none;
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #bb86fc;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        header p {
+            font-size: 1.2em;
         }
-
-        canvas {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        form {
+        nav {
+            margin: 20px auto;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
+            justify-content: center;
+            gap: 15px;
         }
-
-        form input, form textarea, form button {
-            padding: 10px;
-            font-size: 1rem;
+        nav a {
+            text-decoration: none;
+            color: #e6e6e6;
+            padding: 10px 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background: #444;
+            color: #bb86fc;
+            transform: scale(1.1);
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #bb86fc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 2px solid #333;
+        }
+        footer p {
+            margin: 0;
+        }
+        .highlight {
+            color: #bb86fc;
+            font-weight: bold;
+        }
+        .button {
+            padding: 12px 25px;
+            background: #bb86fc;
+            color: #0d0d0d;
             border: none;
             border-radius: 5px;
-        }
-
-        form button {
-            background-color: #320744;
-            color: white;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 1em;
+            transition: background 0.3s;
         }
-
-        form button:hover {
-            background-color: #3c063c;
+        .button:hover {
+            background: #9b6bd7;
         }
-        section#Contract {
-    padding: 100px 20px;
-    text-align: center;
-    min-height: 100vh;
-    background-image: url(https://pbs.twimg.com/media/GhB1bJdWoAILZY7?format=jpg&name=medium); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    color: white;
-}
-
-section#feedback {
-    padding: 100px 20px;
-    text-align: center;
-    min-height: 100vh;
-    background-image: url(https://pbs.twimg.com/media/GhB1bJdWoAILZY7?format=jpg&name=medium); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    color: white;
-}
-
+        .interactive {
+            text-align: center;
+            margin: 40px 0;
+        }
     </style>
 </head>
-
-
 <body>
     <header>
-        <div class="logo">SYNDRA AI</div>
-        <nav>
-            <div class="menu-toggle">☰</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#Contract">Contract</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-                <li><a href="https://github.com/" target="_blank">Github</a></li>
-
-            </ul>
-        </nav>
+        <h1>SYNDRA AI</h1>
+        <p>A <span class="highlight">Mysterious</span> Black-Themed AI Sorcerer Platform</p>
     </header>
-
-    <canvas id="bg"></canvas>
-
-    <div class="hero">
-        <div class="hero-content">
-            <h1> SYNDRA AI VERSE </h1>
-            <p>People fear what they cannot understand.</p>
-            <div class="cta-buttons">
-                <a href="https://x.com/syndraai" target="_blank">Witness My Power </a>
-                <a href="https://dexscreener.com/solana">Connect to DexScrenner 🔗</a>
-            </div>
-        </div>
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#how-to-use">How to Use</a>
+        <a href="#details">Unique Details</a>
+        <a href="#join">Join Us</a>
+    </nav>
+    <div class="container">
+        <section id="features">
+            <h2>Platform Features</h2>
+            <ul>
+                <li><strong>AI Sorcerer Integration:</strong> A guiding chatbot that immerses you in a magical journey.</li>
+                <li><strong>Full Solana Integration:</strong> Connect your wallet, manage assets, and explore DeFi and NFT projects.</li>
+                <li><strong>Limitless Exploration:</strong> Interactive storytelling and magical books for endless adventure.</li>
+                <li><strong>Dark Design:</strong> A captivating black-toned interface inspired by ancient grimoires.</li>
+            </ul>
+        </section>
+        <section id="how-to-use">
+            <h2>How to Use</h2>
+            <p>1. Connect your <span class="highlight">Solana wallet</span> to get started.</p>
+            <p>2. Interact with your <span class="highlight">AI Sorcerer</span> for tasks, stories, and guidance.</p>
+            <p>3. Manage your <span class="highlight">NFT collections</span> and participate in DeFi projects.</p>
+        </section>
+        <section id="details">
+            <h2>Unique Details</h2>
+            <ul>
+                <li><strong>Daily Prophecies:</strong> Receive inspiring prophecies and discover new opportunities.</li>
+                <li><strong>Dark NFT Marketplace:</strong> Explore a marketplace filled with rare and magical NFTs.</li>
+                <li><strong>Community Events:</strong> Join the "<span class="highlight">Council of Shadows</span>" and vote on community-driven decisions.</li>
+            </ul>
+        </section>
+        <section id="join" class="interactive">
+            <h2>Join the Shadows</h2>
+            <p>Are you ready to write your story? Connect your wallet and become part of the SYNDRA AI universe.</p>
+            <a href="https://x.com/syndraai" class="button">Join Now</a>
+        </section>
     </div>
-
-
-    <section id="Contract">
-        <h2>Contract</h2>
-        <p>  </p>
-    </section>
-    
-    
-    <section id="feedback">
-        <h2>Feedback</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
     <footer>
-        Powered with by <a href="https://x.com/syndraai">SYNDRA AI</a>
+        <p>&copy; 2025 SYNDRA AI. All rights reserved.</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        
-        const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
-        const sphereMaterial1 = new THREE.MeshBasicMaterial({ color: 0x4b0082, wireframe: true });
-const sphereMaterial2 = new THREE.MeshBasicMaterial({ color: 0x4b0082, wireframe: true }); 
-const sphereMaterial3 = new THREE.MeshBasicMaterial({ color: 0x4b0082, wireframe: true }); 
-        const sphere1 = new THREE.Mesh(sphereGeometry, sphereMaterial1);
-        const sphere2 = new THREE.Mesh(sphereGeometry, sphereMaterial2);
-        const sphere3 = new THREE.Mesh(sphereGeometry, sphereMaterial3);
-
-        
-        sphere1.position.set(-10, 0, 0); 
-        sphere2.position.set(10, 0, 0);  
-        sphere3.position.set(0, 10, 0);  
-        scene.add(sphere1, sphere2, sphere3);
-
-      
-        camera.position.z = 30;
-
-        let clock = new THREE.Clock();
-let angle = 0; 
-
-function animate() {
-    const delta = clock.getDelta();
-    angle += delta; 
-    const radius = 10; 
-    sphere1.position.x = radius * Math.cos(angle); 
-    sphere1.position.y = radius * Math.sin(angle); 
-
-    sphere2.position.x = radius * Math.cos(angle + Math.PI / 2); 
-    sphere2.position.y = radius * Math.sin(angle + Math.PI / 2);
-
-    sphere3.position.x = radius * Math.cos(angle + Math.PI); 
-    sphere3.position.y = radius * Math.sin(angle + Math.PI);
-
-    
-    sphere1.rotation.x += delta * 0.5;
-    sphere1.rotation.y += delta * 0.5;
-
-    sphere2.rotation.x += delta * 0.3;
-    sphere2.rotation.y += delta * 0.7;
-
-    sphere3.rotation.x += delta * 0.4;
-    sphere3.rotation.y += delta * 0.6;
-
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-
-        animate();
-
-        
-        window.addEventListener('resize', () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('nav ul');
-
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        });
-    </script>
-   
 </body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNDRA AI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-       
-#syndrabot-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 15px 25px;
-    background-color: #8e44ad;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-#syndrabot-btn:hover {
-    background-color: #7d3c8c;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.4);
-    transform: scale(1.1);
-}
-
-
-.chatbox {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: linear-gradient(135deg, #8e44ad, #9b59b6);
-    padding: 30px;
-    border-radius: 20px;
-    width: 380px;
-    height: 500px;
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    animation: slideIn 0.5s ease-out;
-    backdrop-filter: blur(10px); 
-}
-
-
-.chatbox-header {
-    text-align: center;
-    font-size: 2rem;
-    color: #f5f5f5;
-    margin-bottom: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 10px;
-}
-
-
-.chatbox-messages {
-    height: 300px;
-    overflow-y: auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    color: #f5f5f5;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-}
-
-
-.chat-message {
-    margin-bottom: 15px;
-}
-
-.user-message {
-    color: #090808;
-    text-align: left;
-    font-weight: bold;
-}
-
-.bot-message {
-    color: #0d0d0c;
-    text-align: right;
-    font-weight: bold;
-}
-
-
-.chatbox-input {
-    display: flex;
-    gap: 15px;
-}
-
-.chatbox-input input {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    background-color: #6a1b9a;
-    color: white;
-    font-size: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.chatbox-input button {
-    padding: 12px 20px;
-    border: none;
-    background-color: #0d0c0b;
-    color: white;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.chatbox-input button:hover {
-    background-color: #0e0d0c;
-    transform: scale(1.05);
-}
-
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.chatbox:focus {
-    outline: none;
-    animation: popIn 0.3s ease-in-out;
-}
-
-@keyframes popIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-    </style>
-</head>
-<body>
-
-    
-    <button id="syndrabot-btn" onclick="toggleChat()">SyndraBot</button>
-
-   
-    <div class="chatbox" id="chatbox">
-        <div class="chatbox-header">SyndraBot</div>
-        <div class="chatbox-messages" id="chatbox-messages"></div>
-        <div class="chatbox-input">
-            <input type="text" id="user-input" placeholder="Type your message..." />
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
-    <script>
-       
-        const motivationalQuotes = [
-            "Strength is choosing to rise after every fall.",
-            "Challenges are opportunities to discover your true strength.",
-            "The greatest victory is in rising every time we fall.",
-            "Success is not final; failure is not fatal: It is the courage to continue that counts.",
-            "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
-        ];
-
-        
-        function toggleChat() {
-            const chatbox = document.getElementById('chatbox');
-            chatbox.style.display = (chatbox.style.display === 'none' || chatbox.style.display === '') ? 'flex' : 'none';
-        }
-
-        
-        function sendMessage() {
-            const userInput = document.getElementById('user-input').value.trim();
-            const chatboxMessages = document.getElementById('chatbox-messages');
-
-            if (userInput) {
-                
-                const userMessageElement = document.createElement('div');
-                userMessageElement.classList.add('chat-message', 'user-message');
-                userMessageElement.textContent = `You: ${userInput}`;
-                chatboxMessages.appendChild(userMessageElement);
-
-                
-                const botResponse = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-                const botMessageElement = document.createElement('div');
-                botMessageElement.classList.add('chat-message', 'bot-message');
-                botMessageElement.textContent = `Bot: ${botResponse}`;
-                chatboxMessages.appendChild(botMessageElement);
-
-                
-                chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
-
-                
-                document.getElementById('user-input').value = '';
-            }
-        }
-    </script>
-</body>
-
 </html>
-
-
-
